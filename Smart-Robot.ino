@@ -8,7 +8,7 @@
   */
   
 //Libraries
-#include <L298N.h>
+#include "L298N.h"
 #include <NewPing.h>
 #include <Servo.h>
 
@@ -56,7 +56,7 @@ void loop()
 
 void check_obstacle()
 {
-	int  dist = sonar.ping_cm;
+	int  dist = sonar.ping_cm();
 	delay(50); 
 	if (dist < 10) {
 		way_clear = 0;
